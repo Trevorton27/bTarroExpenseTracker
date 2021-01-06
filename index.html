@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -11,42 +10,53 @@
       type="text/css"
     />
   </head>
-
   <body>
-    <h1>Simple Expense Tracker</h1>
-    <div>
-      <input class=btn type="date"></input>
-      <input class=btn type="text" placeholder="Enter your expense description"></input>
-      <input class=btn type="text" placeholder="Where did you spend?"></input>
-      <input class=btn type="number"></input>
-      <input class=btn type="button" value="Submit"></input>
+    <div id="app-container">
+      <h1>Simple Expense Tracker</h1>
+      <div id="input-container">
+        <input class="btn date" id="expense-date" type="date" />
+        <input
+          class="btn description"
+          id="expense-description"
+          type="text"
+          placeholder="Expense description"
+        />
+        <input
+          class="btn"
+          id="expense-location"
+          type="text"
+          placeholder="Expense location"
+        />
+        <input
+          class="btn amount"
+          id="expense-amount"
+          type="number"
+          placeholder="$ Amount"
+        />
+        <input class="btn" id="submit-expense" type="button" value="Submit" />
+      </div>
+      <br />
+      <div id="expense-table">
+        <table>
+          <thead>
+            <tr>
+              <th class="date">Date</th>
+              <th class="description">Description</th>
+              <th class="location">Location</th>
+              <th class="amount">Amount</th>
+            </tr>
+          </thead>
+          <tbody id="tracker-body">
+            <tr>
+              <td>12/17/2020</td>
+              <td>Sample Thing (delete me!)</td>
+              <td>Amazon</td>
+              <td class="money">$12</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <br>
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th id=description>Description</th>
-          <th id=location>Location</th>
-          <th>Amount</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>01/02/2021</td>
-          <td>Baseball Cards</td>
-          <td>Gas Station</td>
-          <td>$5</td>
-        </tr>
-        <tr>
-          <td>01/01/2021</td>
-          <td>Bullet journal</td>
-          <td>Walgreens</td>
-          <td>$12</td>
-        </tr>
-      </tbody>
-
-    </table>
     <script src="app.js"></script>
   </body>
 </html>

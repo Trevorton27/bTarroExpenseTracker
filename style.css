@@ -1,38 +1,75 @@
+html,
 body {
+  padding: 10px;
+  height: 80%;
+  background-color: #fff;
+  color: #111;
+  font-family: ubuntu;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #cdcdcd;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid #cdcdcd;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #cdcdcd;
+}
+
+#app-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  color: whitesmoke;
-  background-color: #333333;
-  font-family: ubuntu;
+  height: 100%;
 }
 
-table,
-td,
-th {
-  border: 1px solid whitesmoke;
-  text-align: left;
+#input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
 }
 
-thead {
-  background-color: lightgrey;
-  color: black;
-}
-
-#description {
-  width: 400px;
-}
-
-#location {
-  width: 200px;
+#expense-table {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
 }
 
 .btn {
   background: none;
-  color: whitesmoke;
-  border: solid 1px gray;
-  border-radius: 4px;
+  border: solid 1px #cdcdcd;
+  border-radius: 2px;
   outline: none;
+}
+
+.date {
+  min-width: 135px;
+}
+
+.description {
+  width: 100%;
+}
+
+.location {
+  min-width: 150px;
+}
+
+.amount {
+  min-width: 60px;
+}
+
+.money {
+  color: red;
 }
