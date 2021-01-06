@@ -3,19 +3,18 @@ body {
   padding: 10px;
   height: 80%;
   background-color: #fff;
-  color: #111;
+  color: grey;
   font-family: ubuntu;
 }
 
 table {
   width: 100%;
   text-align: left;
-  border: 1px solid #cdcdcd;
   border-collapse: collapse;
 }
 
 td {
-  border: 1px solid #cdcdcd;
+  border-bottom: 1px solid #cdcdcd;
   border-collapse: collapse;
 }
 
@@ -47,11 +46,27 @@ th {
   width: 75%;
 }
 
+#trash {
+  width: 60px;
+  height: 20px;
+  background: none;
+  filter: invert(50%);
+}
+
+#submit-expense {
+  min-width: 60px;
+  height: 39px;
+}
+
 .btn {
   background: none;
   border: solid 1px #cdcdcd;
-  border-radius: 2px;
+  border-radius: 3px;
   outline: none;
+  height: 35px;
+  padding: 1px 1px;
+  margin: 1px 1px;
+  font-family: ubuntu;
 }
 
 .date {
@@ -63,13 +78,15 @@ th {
 }
 
 .location {
-  min-width: 150px;
+  min-width: 175px;
 }
 
 .amount {
-  min-width: 60px;
+  min-width: 120px;
+  text-align: center;
 }
 
 .money {
-  color: red;
+  color: coral;
+  text-align: center;
 }
