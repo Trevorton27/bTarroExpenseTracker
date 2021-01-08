@@ -46,16 +46,16 @@ th {
   width: 75%;
 }
 
-#trash {
+#submit-expense {
+  min-width: 60px;
+  height: 39px;
+}
+
+.trash {
   width: 60px;
   height: 20px;
   background: none;
   filter: invert(50%);
-}
-
-#submit-expense {
-  min-width: 60px;
-  height: 39px;
 }
 
 .btn {
