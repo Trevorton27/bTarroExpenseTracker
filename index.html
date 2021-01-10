@@ -10,30 +10,44 @@
       type="text/css"
     />
   </head>
+
   <body>
+    <h1>Simple Expense Tracker</h1>
     <div id="app-container">
-      <h1>Simple Expense Tracker</h1>
       <div id="input-container">
-        <input class="btn date" id="expense-date" type="date" />
-        <input
-          class="btn description"
-          id="expense-description"
-          type="text"
-          placeholder="What is your expense?"
-        />
-        <input
-          class="btn"
-          id="expense-location"
-          type="text"
-          placeholder="From where?"
-        />
-        <input
-          class="btn amount"
-          id="expense-amount"
-          type="number"
-          placeholder="$ Amount"
-        />
-        <input class="btn" id="submit-expense" type="button" value="Submit" />
+        <form id="form">
+          <div class="inputWrapper">
+            <h2>Date</h2>
+            <input class="input" id="expense-date" type="date" required />
+          </div>
+          <div class="inputWrapper">
+            <h2>Item</h2>
+            <input
+              class="input"
+              id="expense-description"
+              type="text"
+              required
+            />
+          </div>
+
+          <div class="inputWrapper">
+            <h2>Location</h2>
+            <input class="input" id="expense-location" type="text" required />
+          </div>
+
+          <div class="inputWrapper">
+            <h2>Amount</h2>
+            <input
+              class="input"
+              id="expense-amount"
+              type="number"
+              required
+            />
+          </div>
+
+            <button id="submit-expense">Submit</button>
+
+        </form>
       </div>
       <br />
       <div id="expense-table">
@@ -47,17 +61,7 @@
               <th></th>
             </tr>
           </thead>
-          <tbody id="tracker-body">
-            <tr>
-              <td>2021-01-01</td>
-              <td>Bullet Journal (Sample - delete me!)</td>
-              <td>Amazon</td>
-              <td class="money">$12</td>
-              <td>
-                <img class="trash" id="sample" src="images/new_trash.svg" />
-              </td>
-            </tr>
-          </tbody>
+          <tbody id="tracker-body"></tbody>
         </table>
       </div>
     </div>

@@ -1,49 +1,57 @@
-let expenseDate;
-let expenseDescription;
-let expenseLocation;
-let expenseAmount;
+const userInput = document.querySelectorAll('input');
+const expenseDate = document.getElementById('expense-date');
+const expenseDescription = document.getElementById('expense-description');
+const expenseLocation = document.getElementById('expense-location');
+const expenseAmount = document.getElementById('expense-amount');
 
-function initializeApp() {
-  document
-    .getElementById("submit-expense")
-    .addEventListener("click", addExpense);
-  document
-    .getElementById("sample")
-    .addEventListener("click", (e) => e.target.parentNode.parentNode.remove());
-}
+document.getElementById('submit-expense').addEventListener('click', (e) => {
+  e.preventDefault();
+  if (userInput.value !== '') {
+    addExpense();
+  } else {
+    alert('Please fill out all fields before clicking submit.');
+  }
+});
 
 function addExpense() {
-  getUserInput();
   createExpense();
   resetUserInput();
 }
 
-function getUserInput() {
-  expenseDate = document.getElementById("expense-date").value;
-  expenseDescription = document.getElementById("expense-description").value;
-  expenseLocation = document.getElementById("expense-location").value;
-  expenseAmount = document.getElementById("expense-amount").value;
-}
-
 function createExpense() {
-  let newExpense = document.createElement("tr");
-  newExpense.innerHTML = `<td> ${expenseDate} </td> 
-                        <td> ${expenseDescription} </td> 
-                        <td> ${expenseLocation} </td> 
-                        <td class=money>$ ${expenseAmount} </td>
-                        <td><img class="trash" src="images/new_trash.svg" /></td>`;
+  const newExpense = document.createElement('tr');
 
-  newExpense.addEventListener("click", () => newExpense.remove());
+  const expenseDateCell = document.createElement('td');
+  expenseDateCell.textContent = expenseDate.value;
+  newExpense.appendChild(expenseDateCell);
 
-  document.getElementById("tracker-body").appendChild(newExpense);
+  const expenseDescriptionCell = document.createElement('td');
+  expenseDescriptionCell.textContent = expenseDescription.value;
+  newExpense.appendChild(expenseDescriptionCell);
+
+  const expenseLocationCell = document.createElement('td');
+  expenseLocationCell.textContent = expenseLocation.value;
+  newExpense.appendChild(expenseLocationCell);
+
+  const expenseAmountCell = document.createElement('td');
+  expenseAmountCell.textContent = `$${expenseAmount.value}.00`;
+  newExpense.appendChild(expenseAmountCell);
+
+  const deleteButtonCell = document.createElement('td');
+  newExpense.appendChild(deleteButtonCell);
+
+  const deleteButton = document.createElement('img');
+  deleteButton.src = 'images/new_trash.svg';
+  deleteButtonCell.appendChild(deleteButton);
+
+  deleteButton.addEventListener('click', () => newExpense.remove());
+
+  document.getElementById('tracker-body').appendChild(newExpense);
 }
 
 function resetUserInput() {
-  let userInput = document.querySelectorAll(".btn");
-  let eachBtn;
-  for (eachBtn = 0; eachBtn < userInput.length - 1; eachBtn++) {
-    userInput[eachBtn].value = "";
+  let eachInput;
+  for (eachInput = 0; eachInput < userInput.length - 1; eachInput++) {
+    userInput[eachInput].value = '';
   }
 }
-
-initializeApp();
