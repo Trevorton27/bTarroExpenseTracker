@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Simple Expense Tracker</title>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -17,11 +18,11 @@
       <div id="input-container">
         <form id="form">
           <div class="inputWrapper">
-            <h2>Date</h2>
+            <h3>Date</h3>
             <input class="input" id="expense-date" type="date" required />
           </div>
           <div class="inputWrapper">
-            <h2>Item</h2>
+            <h3>Item</h3>
             <input
               class="input"
               id="expense-description"
@@ -31,12 +32,12 @@
           </div>
 
           <div class="inputWrapper">
-            <h2>Location</h2>
+            <h3>Location</h3>
             <input class="input" id="expense-location" type="text" required />
           </div>
 
           <div class="inputWrapper">
-            <h2>Amount</h2>
+            <h3>Amount</h3>
             <input
               class="input"
               id="expense-amount"
@@ -44,8 +45,9 @@
               required
             />
           </div>
-
+          <div id="submitWrapper">
             <button id="submit-expense">Submit</button>
+          </div>
 
         </form>
       </div>

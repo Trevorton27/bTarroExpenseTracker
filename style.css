@@ -51,6 +51,16 @@ th {
   justify-content: center;
 }
 
+.inputWrapper {
+  text-align: center;
+}
+
+#form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 #expense-table {
   display: flex;
   flex-direction: row;
@@ -67,7 +77,10 @@ th {
   background-color: #808080;
   color: #fff;
   font-size: 18px;
-  margin-top: 64px;
+}
+
+#submitWrapper {
+  margin-top: 60px;
 }
 
 .trash {

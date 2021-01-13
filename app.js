@@ -6,16 +6,22 @@ const expenseAmount = document.getElementById('expense-amount');
 
 document.getElementById('submit-expense').addEventListener('click', (e) => {
   e.preventDefault();
-  if (userInput.value !== '') {
-    addExpense();
-  } else {
-    alert('Please fill out all fields before clicking submit.');
+
+  for (i = 0; i < userInput.length; i++) {
+    console.log('input field value ', userInput);
+    if (userInput[i].value !== '') {
+      addExpense();
+    } else {
+      alert('Please fill out all fields before clicking submit.');
+      return;
+    }
   }
 });
 
 function addExpense() {
   createExpense();
   resetUserInput();
+  document.getElementById('form').reset();
 }
 
 function createExpense() {
